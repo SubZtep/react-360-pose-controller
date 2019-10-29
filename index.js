@@ -1,31 +1,22 @@
 import React from "react"
-import { AppRegistry, asset, StyleSheet, View, Image } from "react-360"
-
-import { NativeModules } from "react-360"
-const { ControllerInfo } = NativeModules
+import { AppRegistry, StyleSheet, View, asset, Image } from "react-360"
 
 export default class Hello360 extends React.Component {
-  componentDidMount() {
-    ControllerInfo.getControllers().then(ctrls => {
-      //console.log("--- CONTROLLERS", ctrls)
-    })
-  }
-
   render() {
     return (
-      <View style={styles.mainView}>
-        <Image style={styles.fullPic} source={asset("mop_4680x472.jpg")} />
+      <View style={styles.panel}>
+        <Image style={styles.fullSize} source={asset("mop_4680x472.jpg")} />
       </View>
     )
   }
 }
 
 const styles = StyleSheet.create({
-  mainView: {
-    height: 472,
-    width: 4680
+  panel: {
+    width: 4680,
+    height: 472
   },
-  fullPic: {
+  fullSize: {
     width: "100%",
     height: "100%"
   }
